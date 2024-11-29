@@ -1,0 +1,1189 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "RoadAssist Documentation",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://192.168.0.66:4067",
+      "description": "local Server"
+    },
+    {
+      "url": " https://road-assist-api.bosselt.com/",
+      "description": "live Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Registration",
+      "description": "User Registration related apis"
+    }
+  ],
+  "paths": {
+    "/api/login": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        }
+      }
+    },
+    "/api/verifyOtp": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/verifyOtp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        }
+      }
+    },
+    "/api/resendOtp": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/resendOtp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        }
+      }
+    },
+    "/api/createProfile": {
+      "put": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/createProfile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/deleteUser": {
+      "put": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/logout": {
+      "patch": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/logout"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/getProfile": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/getServicesOffered": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/getCarTowingRequests": {
+      "get": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/AddServiceImages": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/AddServiceImages"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/DeleteService": {
+      "put": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteService"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/createProfileBasicDeatsils": {
+      "put": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/createProfileBasicDeatsils"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/carTowingBooking": {
+      "post": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/carTowingBooking"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/updateCurrentLocation": {
+      "put": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateCurrentLocation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/updateCarTowingBooking": {
+      "put": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateCarTowingBooking"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/requestListBasedOnStatus": {
+      "get": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/role"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/getBookingRequestInfo": {
+      "get": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/createPaymentIntent": {
+      "post": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createPaymentIntent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/paymentDoneforBooking": {
+      "put": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/paymentDoneforBooking"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/contactUs": {
+      "post": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/contactUs"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/getNotification": {
+      "get": {
+        "tags": [
+          "Home Flow"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "400": {
+            "description": "Bad request - Invalid input, validation error"
+          },
+          "401": {
+            "description": "Unauthorized - Authentication failure"
+          },
+          "500": {
+            "description": "Internal server error - Something went wrong on the server side"
+          }
+        },
+        "security": [
+          {
+            "access_token": [
+              "access_token"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "verifyOtp": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "description": "Enter Id",
+            "type": "string"
+          },
+          "otp": {
+            "description": "Enter Otp",
+            "type": "number"
+          },
+          "type": {
+            "description": "1 for number verification",
+            "type": "number"
+          }
+        }
+      },
+      "resendOtp": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "description": "Enter your Id",
+            "type": "string"
+          }
+        }
+      },
+      "login": {
+        "type": "object",
+        "properties": {
+          "phoneNumber": {
+            "description": "Enter your Phone Number",
+            "type": "number",
+            "format": "email",
+            "default": "abc@yopmail.com"
+          },
+          "countryCode": {
+            "description": "Enter your Country Code",
+            "type": "string"
+          },
+          "device_token": {
+            "description": "Enter device token",
+            "type": "string"
+          },
+          "device_type": {
+            "description": "0:Web; 1:Android; 2:iOS; 3:default",
+            "type": "number"
+          },
+          "device_model": {
+            "description": "OS-browser name for web; DEVICE-model for mobile apps",
+            "type": "string"
+          },
+          "isGuest": {
+            "type": "boolean"
+          }
+        }
+      },
+      "createProfile": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "description": "0=>user,1=>service provider",
+            "type": "number"
+          },
+          "countryCode": {
+            "description": "Enter Country Code",
+            "type": "string"
+          },
+          "phoneNumber": {
+            "description": "Enter Phone Number",
+            "type": "number"
+          },
+          "availableParts": {
+            "description": "Enter Available Parts",
+            "type": "array"
+          },
+          "servicesOffered": {
+            "description": "Enter Services Offered",
+            "type": "array"
+          },
+          "isProfileCompleted": {
+            "description": "1 for completed, 0 for not completed",
+            "type": "number"
+          }
+        }
+      },
+      "contactUs": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "deleteUser": {
+        "type": "object"
+      },
+      "logout": {
+        "type": "object"
+      },
+      "getProfile": {
+        "type": "object"
+      },
+      "deleteImage": {
+        "type": "object",
+        "properties": {
+          "imageName": {
+            "description": "enter imagename",
+            "type": "string"
+          }
+        }
+      },
+      "AddServiceImages": {
+        "type": "object",
+        "properties": {
+          "images": {
+            "description": "Enter Images",
+            "type": "file"
+          },
+          "vehicleRegistrationNumber": {
+            "description": "Enter number",
+            "type": "string"
+          }
+        }
+      },
+      "DeleteService": {
+        "type": "object",
+        "properties": {
+          "ServiceId": {
+            "description": "enter Service Id",
+            "type": "string"
+          }
+        }
+      },
+      "createProfileBasicDeatsils": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "description": "Enter latitude",
+            "type": "number"
+          },
+          "lng": {
+            "description": "Enter longitude",
+            "type": "number"
+          },
+          "name": {
+            "description": "Enter Name",
+            "type": "string"
+          },
+          "email": {
+            "description": "Enter Email",
+            "type": "string"
+          },
+          "profileImage": {
+            "description": "Enter Profile Image",
+            "type": "file"
+          },
+          "address": {
+            "description": "Enter address",
+            "type": "string"
+          },
+          "availiability": {
+            "type": "number",
+            "description": "0=not available,1=available"
+          },
+          "companyPicture": {
+            "type": "file",
+            "default": null
+          },
+          "companyName": {
+            "type": "string",
+            "default": null
+          },
+          "companyEmail": {
+            "type": "string",
+            "default": null
+          },
+          "companyCountryCode": {
+            "type": "string",
+            "default": null
+          },
+          "companyNumber": {
+            "type": "number",
+            "default": null
+          },
+          "primaryOwner": {
+            "type": "string",
+            "default": null
+          },
+          "contact": {
+            "type": "string",
+            "default": null
+          },
+          "bussinessAddress": {
+            "type": "string",
+            "default": null
+          },
+          "streetAddress": {
+            "type": "string",
+            "default": null
+          },
+          "country": {
+            "type": "string",
+            "default": null
+          },
+          "state": {
+            "type": "string",
+            "default": null
+          },
+          "city": {
+            "type": "string",
+            "default": null
+          },
+          "zipcode": {
+            "type": "number",
+            "default": null
+          }
+        }
+      },
+      "carTowingBooking": {
+        "type": "object",
+        "properties": {
+          "pickUpLat": {
+            "type": "number"
+          },
+          "pickUpLng": {
+            "type": "number"
+          },
+          "dropOffLat": {
+            "type": "number"
+          },
+          "dropOffLng": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "serviceId": {
+            "type": "string"
+          },
+          "pickUpAddress": {
+            "type": "string"
+          },
+          "dropOffAddress": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "repair_type": {
+            "type": "string"
+          },
+          "scheduledTime": {
+            "type": "date"
+          },
+          "scheduledDate": {
+            "type": "date"
+          }
+        }
+      },
+      "updateCurrentLocation": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          }
+        }
+      },
+      "updateCarTowingBooking": {
+        "type": "object",
+        "properties": {
+          "isAccepted": {
+            "type": "number"
+          },
+          "isReached": {
+            "type": "number"
+          },
+          "acceptedBy": {
+            "type": "sring"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "cancelReason": {
+            "type": "string"
+          },
+          "cancelDescription": {
+            "type": "string"
+          },
+          "cancelledBy": {
+            "type": "number",
+            "description": "0=user, 1=service provider"
+          },
+          "isComplete": {
+            "type": "number",
+            "description": "0=not-completed, 1=completed"
+          },
+          "extraAmmount": {
+            "type": "number"
+          },
+          "tip": {
+            "type": "number"
+          },
+          "extraAmmountDescription": {
+            "type": "string"
+          },
+          "isExtraAmmountRequestAccepted": {
+            "type": "number",
+            "description": "1=accept 0=decline"
+          }
+        }
+      },
+      "requestListBasedOnStatus": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "number"
+          },
+          "status": {
+            "type": "number",
+            "description": "1=complete 2=>cancelled 3=>upcoming"
+          }
+        }
+      },
+      "createPaymentIntent": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          }
+        }
+      },
+      "paymentDoneforBooking": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "paymentIntent": {
+            "type": "string"
+          },
+          "isPaymentReceived": {
+            "type": "number"
+          },
+          "isPaymentDone": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "id": {
+        "name": "id",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "role": {
+        "name": "role",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "number"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "number"
+        },
+        "style": "form",
+        "explode": true
+      },
+      "requestListBasedOnStatus": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "name": "role",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "style": "form",
+            "explode": true
+          },
+          "status": {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "style": "form",
+            "explode": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "access_token": {
+        "type": "apiKey",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  }
+}
